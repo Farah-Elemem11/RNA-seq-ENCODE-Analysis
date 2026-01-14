@@ -1,69 +1,44 @@
-RNA-seq Differential Expression Analysis (GSE49712 - ENCODE)
+ RNA-Seq Differential Expression Analysis | MCF.7 vs GM12892
 
-This project performs RNA-seq differential gene expression analysis using the DESeq2 package in R, applied to the publicly available dataset GSE49712 (ENCODE project).
+ Project Overview
 
-Overview
-The aim of this analysis is to identify genes that are differentially expressed among three human cell lines:
+This project performs a comprehensive Transcriptomic Analysis to identify Differentially Expressed Genes (DEGs) between different cell lines: MCF.7 (Breast Cancer), GM12892 (Lymphoblastoid - Normal Control), and H1.hESC (Embryonic Stem Cells).
 
-* GM12892
-* H1.hES
-* MCF.7
+The analysis aims to uncover the molecular signatures that distinguish cancerous cells from normal and stem cells using the DESeq2 framework.
 
-Workflow Steps
+ Tools & Technologies
 
-1. Import raw count data from HTSeq files
-2. Construct the DESeq2 dataset
-3. Perform normalization and differential expression analysis
-4. Extract significantly expressed genes (adjusted p < 0.05)
-5. Visualize results using Volcano Plot and Heatmap
+Language: R
+Core Packages: DESeq2: For differential expression testing.
+ggplot2: For high-quality data visualization (Volcano Plots).
+pheatmap: For clustered gene expression heatmaps.
+RColorBrewer: For optimized color palettes.
 
 
-Tools & Libraries Used
+ Workflow Pipeline
 
-* R / RStudio
-* DESeq2
-* ggplot2
-* pheatmap
-
-
-
-Project Structure
-
-RNAseq_DESeq2_GSE49712/
-│
-├── README.md                (Project description - this file)
-│
-├── data/                    (Raw data files)
-│   └── GSE49712_ENCODE_HTSeq.txt
-│
-├── scripts/                 (Analysis scripts)
-│   └── DESeq2_analysis.R
-│
-├── results/                 (CSV results and outputs)
-│   └── finally.csv
-│
-└── figures/                 (Generated figures)
-├── volcano_plot.png
-└── heatmap.png
+1. Data Pre-processing: Loading raw HTSeq counts and filtering out low-abundance genes (counts < 10).
+2.Metadata Construction: Defining experimental conditions and setting the reference baseline (GM12892).
+3.Statistical Analysis: Normalization and fitting the Negative Binomial distribution using DESeq2.
+4. Significance Filtering: Identifying DEGs based on:
+ Adjusted P-value < 0.05
+ |log2FoldChange| > 1
 
 
+6. Visualization: Generating Volcano plots to show the global distribution of DEGs and Heatmaps to show the Z-score scaling of the top 50 genes.
 
-Key Outputs
+  Key Results
 
-* finally.csv → List of significantly differentially expressed genes
-* volcano_plot.png → Visual summary of gene significance vs fold change
-* heatmap.png → Expression pattern of top 500 significant genes
+ Up-regulated Genes: Identification of genes overexpressed in the MCF.7 cancer line, potentially acting as oncogenic drivers.
+ Down-regulated Genes: Identification of genes suppressed in cancer, often associated with normal cellular functions or tumor suppression.
+ Clustering: Clear separation between cell types in the heatmap, validating the biological consistency of the samples.
 
-Author
-Farah Mohamed Elimam Mohamed
-M.Sc. Preliminary Student in Biochemistry, Mansoura University
-Egypt
+  Repository Structure
 
-
-Notes
-This project represents a small part of my practical training in RNA-seq data analysis and bioinformatics using R.
-Further steps will include functional enrichment and pathway analysis in upcoming projects.
-
+GSE49712_ENCODE_HTSeq.txt: The raw input count matrix.
+RNAseq_Final_Analysis.R: The complete, optimized R script.
+RNAseq_Final_Results.csv: Output table containing log2FoldChange and P-values.
+Plots: Directory containing the Volcano Plot and Heatmap images.
 
 
 
