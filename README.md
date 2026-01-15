@@ -43,5 +43,8 @@ RNAseq_Final_Results.csv: Output table containing log2FoldChange and P-values.
 Plots: Directory containing the Volcano Plot and Heatmap images.
 
 
+onnect with Me
+LinkedIn: https://www.linkedin.com/in/farah-elemam-107969323
+
 
 
