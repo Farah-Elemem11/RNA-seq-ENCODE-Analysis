@@ -1,4 +1,4 @@
-Author: Farah Mohamed Elemam > Role:Biochemist & Bioinformatics Researcher 
+
  
  RNA-Seq Differential Expression Analysis | MCF.7 vs GM12892
 
