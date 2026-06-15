@@ -1,7 +1,6 @@
 # =============================================================
 # RNA-seq Differential Expression Analysis (GSE49712 ENCODE)
 # Project: Comparison of MCF.7, H1.hESC, and GM12892 Cell Lines
-# Author: Farah (Biochemist)
 # =============================================================
 
 
