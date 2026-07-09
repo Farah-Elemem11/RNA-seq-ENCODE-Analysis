@@ -1,50 +1,47 @@
+# RNA-Seq Differential Expression Analysis | MCF.7 vs GM12892
 
- 
- RNA-Seq Differential Expression Analysis | MCF.7 vs GM12892
+## Project Overview
 
- Project Overview
+This project demonstrates a complete RNA-seq differential expression analysis workflow using the DESeq2 package in R. The analysis compares the breast cancer cell line **MCF.7** with the normal lymphoblastoid cell line **GM12892** to identify significantly differentially expressed genes (DEGs). The **H1.hESC** embryonic stem cell line was included for exploratory visualization in the heatmap.
 
-This project performs a comprehensive Transcriptomic Analysis to identify Differentially Expressed Genes (DEGs) between different cell lines: MCF.7 (Breast Cancer), GM12892 (Lymphoblastoid - Normal Control), and H1.hESC (Embryonic Stem Cells).
+The workflow includes data preprocessing, normalization, statistical testing, differential expression analysis, and publication-quality visualizations to reveal transcriptomic differences between the analyzed cell lines.
 
-The analysis aims to uncover the molecular signatures that distinguish cancerous cells from normal and stem cells using the DESeq2 framework.
+## Tools & Technologies
 
- Tools & Technologies
+**Programming Language**
 
-Language: R
-Core Packages: DESeq2: For differential expression testing.
-ggplot2: For high-quality data visualization (Volcano Plots).
-pheatmap: For clustered gene expression heatmaps.
-RColorBrewer: For optimized color palettes.
+* R
 
+**Core Packages**
 
- Workflow Pipeline
+* DESeq2 – Differential expression analysis
+* ggplot2 – Volcano plot visualization
+* pheatmap – Clustered heatmap visualization
+* RColorBrewer – Color palette optimization
 
-1. Data Pre-processing: Loading raw HTSeq counts and filtering out low-abundance genes (counts < 10).
-2.Metadata Construction: Defining experimental conditions and setting the reference baseline (GM12892).
-3.Statistical Analysis: Normalization and fitting the Negative Binomial distribution using DESeq2.
-4. Significance Filtering: Identifying DEGs based on:
- Adjusted P-value < 0.05
- |log2FoldChange| > 1
+## Workflow Pipeline
 
+1. Loaded raw HTSeq count data.
+2. Constructed sample metadata and defined the experimental design.
+3. Filtered low-abundance genes (counts ≥ 10).
+4. Normalized gene counts and performed differential expression analysis using DESeq2.
+5. Identified significant DEGs using:
 
-6. Visualization: Generating Volcano plots to show the global distribution of DEGs and Heatmaps to show the Z-score scaling of the top 50 genes.
+   * Adjusted *P*-value < 0.05
+   * |log2 Fold Change| > 1
+6. Generated a volcano plot to visualize significantly regulated genes.
+7. Created a Z-score heatmap of the top 50 differentially expressed genes.
 
-  Key Results
+## Key Results
 
- Up-regulated Genes: Identification of genes overexpressed in the MCF.7 cancer line, potentially acting as oncogenic drivers.
- Down-regulated Genes: Identification of genes suppressed in cancer, often associated with normal cellular functions or tumor suppression.
- Clustering: Clear separation between cell types in the heatmap, validating the biological consistency of the samples.
+* Identified significantly upregulated and downregulated genes between **MCF.7** and **GM12892**.
+* Generated publication-quality volcano plots highlighting statistically significant DEGs.
+* Produced normalized heatmaps demonstrating expression patterns of the top 50 DEGs.
+* Observed clear clustering of samples, supporting the biological consistency of the dataset.
 
-  Repository Structure
+## Repository Structure
 
-GSE49712_ENCODE_HTSeq.txt: The raw input count matrix.
-RNAseq_Final_Analysis.R: The complete, optimized R script.
-RNAseq_Final_Results.csv: Output table containing log2FoldChange and P-values.
-Plots: Directory containing the Volcano Plot and Heatmap images.
-
-
-connect with Me
-LinkedIn: https://www.linkedin.com/in/farah-elemam-107969323
-
-
-
+* **GSE49712_ENCODE_HTSeq.txt** – Raw HTSeq count matrix.
+* **RNAseq_Final_Analysis.R** – Complete analysis workflow.
+* **RNAseq_Final_Results.csv** – Differential expression results.
+* **Plots/** – Volcano plot and heatmap figures.
